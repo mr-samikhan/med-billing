@@ -30,7 +30,12 @@ const Login = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const data = await loginApi(form).unwrap();
+      const obj = {
+        username: "emilys",
+        password: "emilyspass",
+        expiresInMins: 30,
+      };
+      const data = await loginApi({ ...form, ...obj }).unwrap();
       login(data);
       navigate(ROUTES.DASHBOARD, { replace: true });
     } catch (_) {}
