@@ -1,5 +1,5 @@
-import { Grid, Card, CardContent, Typography, Box, Chip } from '@mui/material';
-import { TrendingUp, Assignment, People, AttachMoney } from '@mui/icons-material';
+import { Box, Grid, Card, CardContent, Typography, Chip, List, ListItem, ListItemText, ListItemIcon, Divider } from '@mui/material';
+import { TrendingUp, Assignment, People, AttachMoney, CheckCircle, RadioButtonUnchecked } from '@mui/icons-material';
 import PageHeader from '@components/common/PageHeader';
 
 const STATS = [
@@ -7,6 +7,12 @@ const STATS = [
   { label: 'Revenue (MTD)',   value: '$84,320', icon: <AttachMoney />, color: '#2e7d32', change: '+8%' },
   { label: 'Active Patients', value: '342',   icon: <People />,     color: '#ed6c02', change: '+3%' },
   { label: 'Pending Claims',  value: '47',    icon: <TrendingUp />, color: '#9c27b0', change: '-5%' },
+];
+
+const RECENT_TASKS = [
+  { id: 1, title: 'Review pending claims batch #2847', done: false },
+  { id: 2, title: 'Follow up on denied claim #1032',  done: false },
+  { id: 3, title: 'Submit ERA reconciliation report', done: true  },
 ];
 
 const Dashboard = () => (
@@ -33,6 +39,26 @@ const Dashboard = () => (
           </Card>
         </Grid>
       ))}
+      <Grid item xs={12} md={6}>
+        <Card>
+          <CardContent>
+            <Typography variant="subtitle2" fontWeight={600} mb={1.5}>Recent Tasks</Typography>
+            <List dense disablePadding>
+              {RECENT_TASKS.map((t, i) => (
+                <Box key={t.id}>
+                  {i > 0 && <Divider />}
+                  <ListItem sx={{ px: 0, opacity: t.done ? 0.5 : 1 }}>
+                    <ListItemIcon sx={{ minWidth: 30 }}>
+                      {t.done ? <CheckCircle color="success" fontSize="small" /> : <RadioButtonUnchecked fontSize="small" />}
+                    </ListItemIcon>
+                    <ListItemText primary={t.title} primaryTypographyProps={{ fontSize: '0.82rem', textDecoration: t.done ? 'line-through' : 'none' }} />
+                  </ListItem>
+                </Box>
+              ))}
+            </List>
+          </CardContent>
+        </Card>
+      </Grid>
     </Grid>
   </Box>
 );

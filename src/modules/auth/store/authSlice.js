@@ -28,7 +28,7 @@ const parseJSON = (value) => {
 const authSlice = createSlice({
   name: "auth",
   initialState: {
-    // user: JSON.parse(localStorage.getItem("medbill_user")) || null,
+    // user:         JSON.parse(localStorage.getItem('medbill_user')) || null,
     user: parseJSON(localStorage.getItem("medbill_user")),
     accessToken: localStorage.getItem("medbill_access_token") || null,
     refreshToken: localStorage.getItem("medbill_refresh_token") || null,

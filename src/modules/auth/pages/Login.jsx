@@ -33,9 +33,10 @@ const Login = () => {
       const obj = {
         username: "emilys",
         password: "emilyspass",
-        expiresInMins: 30,
+        // user: "khan",
+        // role: "super-admin",
       };
-      const data = await loginApi({ ...form, ...obj }).unwrap();
+      const data = await loginApi({ ...obj }).unwrap();
       login(data);
       navigate(ROUTES.DASHBOARD, { replace: true });
     } catch (_) {}

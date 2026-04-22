@@ -1,32 +1,66 @@
-import { useState } from 'react';
-import { Outlet } from 'react-router-dom';
+import { useState, useEffect } from 'react';
+import { Outlet, useLocation, useNavigate } from 'react-router-dom';
 import { Box } from '@mui/material';
-import Sidebar, { DRAWER_WIDTH, COLLAPSED_WIDTH } from '@components/layout/Sidebar';
-import Topbar from '@components/layout/Topbar';
+import TopNav from '@components/layout/TopNav';
+import SubNav from '@components/layout/SubNav';
+import { NAV_CONFIG } from '@components/layout/navConfig';
+
+const findActiveModule = (pathname) => {
+  for (const mod of NAV_CONFIG) {
+    if (mod.children.length > 0) {
+      if (mod.children.some(c => pathname.startsWith(c.path))) return mod.id;
+    }
+    if (pathname.startsWith(mod.defaultPath)) return mod.id;
+  }
+  return NAV_CONFIG[0].id;
+};
 
 const AppShell = () => {
-  const [collapsed, setCollapsed] = useState(false);
-  const drawerWidth = collapsed ? COLLAPSED_WIDTH : DRAWER_WIDTH;
+  const location = useLocation();
+  const navigate  = useNavigate();
+
+  const [activeModule, setActiveModule] = useState(
+    () => findActiveModule(location.pathname)
+  );
+
+  useEffect(() => {
+    setActiveModule(findActiveModule(location.pathname));
+  }, [location.pathname]);
+
+  const handleModuleClick = (mod) => {
+    setActiveModule(mod.id);
+    if (mod.children.length > 0) {
+      navigate(mod.children[0].path);
+    } else {
+      navigate(mod.defaultPath);
+    }
+  };
+
+  const activeMod = NAV_CONFIG.find(m => m.id === activeModule);
+  const hasSubNav = activeMod?.children?.length > 0;
 
   return (
-    <Box sx={{ display: 'flex', minHeight: '100vh' }}>
-      <Sidebar collapsed={collapsed} onToggleCollapse={() => setCollapsed(p => !p)} />
+    <Box sx={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
+      {/* Top Module Bar */}
+      <TopNav activeModule={activeModule} onModuleClick={handleModuleClick} />
+
+      {/* Sub-module Bar */}
+      {hasSubNav && (
+        <SubNav items={activeMod.children} />
+      )}
+
+      {/* Page Content */}
       <Box
         component="main"
         sx={{
           flexGrow: 1,
-          ml: `${drawerWidth}px`,
-          transition: 'margin 0.2s ease',
           bgcolor: 'background.default',
-          minHeight: '100vh',
-          display: 'flex',
-          flexDirection: 'column',
+          p: 3,
+          mt: 0,
+          minHeight: 0,
         }}
       >
-        <Topbar drawerWidth={drawerWidth} />
-        <Box sx={{ mt: '56px', p: 3, flexGrow: 1 }}>
-          <Outlet />
-        </Box>
+        <Outlet />
       </Box>
     </Box>
   );
