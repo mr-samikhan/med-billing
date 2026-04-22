@@ -8,7 +8,7 @@ import {
 } from '@mui/material';
 import {
   LightMode, DarkMode, Notifications, Logout, AccountCircle,
-  LocalHospital, Search, ChevronLeft,
+  LocalHospital, Search, ChevronLeft, Tune,
 } from '@mui/icons-material';
 import { useThemeMode } from '@theme/ThemeContext';
 import { useAuth } from '@hooks/useAuth';
@@ -118,6 +118,13 @@ const TopNav = ({ activeModule, onModuleClick }) => {
           <Tooltip title={`Switch to ${mode === 'dark' ? 'light' : 'dark'} mode`}>
             <IconButton size="small" onClick={toggle}>
               {mode === 'dark' ? <LightMode sx={{ fontSize: 18 }} /> : <DarkMode sx={{ fontSize: 18 }} />}
+            </IconButton>
+          </Tooltip>
+
+          {/* Settings */}
+          <Tooltip title="App Settings">
+            <IconButton size="small" onClick={() => navigate(ROUTES.APP_SETTINGS)}>
+              <Tune sx={{ fontSize: 18 }} />
             </IconButton>
           </Tooltip>
 

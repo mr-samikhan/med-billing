@@ -76,4 +76,5 @@ export const ROUTES = {
 
   // Account Administration
   ACCOUNT_ADMIN: '/account-administration',
+  APP_SETTINGS: '/settings',
 };

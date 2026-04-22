@@ -6,7 +6,7 @@ export const useAuth = () => {
   const { user, accessToken, loading } = useSelector((state) => state.auth);
 
   return {
-    user,
+    user: user ?? "khan",
     loading,
     isAuthenticated: !!accessToken,
     role: user?.role || "admin",

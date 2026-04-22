@@ -7,71 +7,74 @@ import AppShell       from '@components/layout/AppShell';
 // Auth
 import Login from '@modules/auth/pages/Login';
 
-// ── Home / Welcome ────────────────────────────────────────
-import Dashboard             from '@modules/welcome/pages/Dashboard';
-import Messages              from '@modules/welcome/pages/Messages';
-import Tasks                 from '@modules/welcome/pages/Tasks';
-import CompanyAnnouncements  from '@modules/welcome/pages/CompanyAnnouncements';
+// App Settings
+import AppSettings from '@modules/settings/pages/AppSettings';
 
-// ── Reports ───────────────────────────────────────────────
+// ── Home / Welcome ─────────────────────────────────────────────────────────
+import Dashboard            from '@modules/welcome/pages/Dashboard';
+import Messages             from '@modules/welcome/pages/Messages';
+import Tasks                from '@modules/welcome/pages/Tasks';
+import CompanyAnnouncements from '@modules/welcome/pages/CompanyAnnouncements';
+
+// ── Reports ────────────────────────────────────────────────────────────────
 import Reports from '@modules/reports/pages/Reports';
 
-// ── Appointments ──────────────────────────────────────────
-import Scheduler             from '@modules/appointments/pages/Scheduler';
-import ManageWaitingList     from '@modules/appointments/pages/ManageWaitingList';
-import AppointmentControl    from '@modules/appointments/pages/AppointmentControl';
-import SuperbillBatchPrint   from '@modules/appointments/pages/SuperbillBatchPrint';
-import AppointmentConfig     from '@modules/appointments/pages/AppointmentConfig';
+// ── Appointments ───────────────────────────────────────────────────────────
+import Scheduler           from '@modules/appointments/pages/Scheduler';
+import ManageWaitingList   from '@modules/appointments/pages/ManageWaitingList';
+import AppointmentControl  from '@modules/appointments/pages/AppointmentControl';
+import SuperbillBatchPrint from '@modules/appointments/pages/SuperbillBatchPrint';
+import AppointmentConfig   from '@modules/appointments/pages/AppointmentConfig';
 
-// ── Patient ───────────────────────────────────────────────
-import PatientMain           from '@modules/patient/pages/PatientMain';
-import ManageAccount         from '@modules/patient/pages/ManageAccount';
-import PaymentPlans          from '@modules/patient/pages/PaymentPlans';
-import ARControl             from '@modules/patient/pages/ARControl';
-import BatchEligibility      from '@modules/patient/pages/BatchEligibility';
-import StatementBatchPrint   from '@modules/patient/pages/StatementBatchPrint';
-import StatementTracker      from '@modules/patient/pages/StatementTracker';
-import LabelBatchPrint       from '@modules/patient/pages/LabelBatchPrint';
-import Communications        from '@modules/patient/pages/Communications';
-import PatientSettings       from '@modules/patient/pages/PatientSettings';
+// ── Patient ────────────────────────────────────────────────────────────────
+import PatientMain         from '@modules/patient/pages/PatientMain';
+import ManageAccount       from '@modules/patient/pages/ManageAccount';
+import PaymentPlans        from '@modules/patient/pages/PaymentPlans';
+import ARControl           from '@modules/patient/pages/ARControl';
+import BatchEligibility    from '@modules/patient/pages/BatchEligibility';
+import StatementBatchPrint from '@modules/patient/pages/StatementBatchPrint';
+import StatementTracker    from '@modules/patient/pages/StatementTracker';
+import LabelBatchPrint     from '@modules/patient/pages/LabelBatchPrint';
+import Communications      from '@modules/patient/pages/Communications';
+import PatientSettings     from '@modules/patient/pages/PatientSettings';
 
-// ── Claim ─────────────────────────────────────────────────
-import Claim               from '@modules/claim/pages/Claim';
-import ClaimTracker        from '@modules/claim/pages/ClaimTracker';
-import ClaimControl        from '@modules/claim/pages/ClaimControl';
-import FollowUpManagement  from '@modules/claim/pages/FollowUpManagement';
-import ClaimBatchPrint     from '@modules/claim/pages/ClaimBatchPrint';
-import ClaimSettings       from '@modules/claim/pages/ClaimSettings';
+// ── Claim ──────────────────────────────────────────────────────────────────
+import Claim              from '@modules/claim/pages/Claim';
+import ClaimTracker       from '@modules/claim/pages/ClaimTracker';
+import ClaimControl       from '@modules/claim/pages/ClaimControl';
+import FollowUpManagement from '@modules/claim/pages/FollowUpManagement';
+import ClaimBatchPrint    from '@modules/claim/pages/ClaimBatchPrint';
+import ClaimSettings      from '@modules/claim/pages/ClaimSettings';
 
-// ── Payment ───────────────────────────────────────────────
-import PaymentPost         from '@modules/payment/pages/PaymentPost';
-import ApplyCredit         from '@modules/payment/pages/ApplyCredit';
-import PaymentView         from '@modules/payment/pages/PaymentView';
-import ERA                 from '@modules/payment/pages/ERA';
-import PaymentTracker      from '@modules/payment/pages/PaymentTracker';
-import PaymentSettings     from '@modules/payment/pages/PaymentSettings';
+// ── Payment ────────────────────────────────────────────────────────────────
+import PaymentPost     from '@modules/payment/pages/PaymentPost';
+import ApplyCredit     from '@modules/payment/pages/ApplyCredit';
+import PaymentView     from '@modules/payment/pages/PaymentView';
+import ERA             from '@modules/payment/pages/ERA';
+import PaymentTracker  from '@modules/payment/pages/PaymentTracker';
+import PaymentSettings from '@modules/payment/pages/PaymentSettings';
 
-// ── Documents / Interface ─────────────────────────────────
+// ── Documents / Interface ──────────────────────────────────────────────────
 import Documents from '@modules/documents/pages/Documents';
 import Interface from '@modules/interface/pages/Interface';
 
-// ── Customer Setup ────────────────────────────────────────
-import Practices           from '@modules/customerSetup/pages/Practices';
-import Providers           from '@modules/customerSetup/pages/Providers';
-import Facilities          from '@modules/customerSetup/pages/Facilities';
-import ReferringProviders  from '@modules/customerSetup/pages/ReferringProviders';
-import Payers              from '@modules/customerSetup/pages/Payers';
-import PayerAgreements     from '@modules/customerSetup/pages/PayerAgreements';
-import CollectionAgencies  from '@modules/customerSetup/pages/CollectionAgencies';
-import Codes               from '@modules/customerSetup/pages/Codes';
-import AlertControl        from '@modules/customerSetup/pages/AlertControl';
-import StatementsSetup     from '@modules/customerSetup/pages/StatementsSetup';
-import Superbills          from '@modules/customerSetup/pages/Superbills';
-import Labels              from '@modules/customerSetup/pages/Labels';
-import Customization       from '@modules/customerSetup/pages/Customization';
-import CustomerSettings    from '@modules/customerSetup/pages/CustomerSettings';
+// ── Customer Setup ─────────────────────────────────────────────────────────
+import Practices          from '@modules/customerSetup/pages/Practices';
+import Providers          from '@modules/customerSetup/pages/Providers';
+import Facilities         from '@modules/customerSetup/pages/Facilities';
+import ReferringProviders from '@modules/customerSetup/pages/ReferringProviders';
+import Payers             from '@modules/customerSetup/pages/Payers';
+import PayerAgreements    from '@modules/customerSetup/pages/PayerAgreements';
+import CollectionAgencies from '@modules/customerSetup/pages/CollectionAgencies';
+import Codes              from '@modules/customerSetup/pages/Codes';
+import AlertControl       from '@modules/customerSetup/pages/AlertControl';
+import StatementsSetup    from '@modules/customerSetup/pages/StatementsSetup';
+import Superbills         from '@modules/customerSetup/pages/Superbills';
+import Labels             from '@modules/customerSetup/pages/Labels';
+import Customization      from '@modules/customerSetup/pages/Customization';
+import CustomerSettings   from '@modules/customerSetup/pages/CustomerSettings';
 
-// ── Account Administration ────────────────────────────────
+// ── Account Admin ──────────────────────────────────────────────────────────
 import AccountAdministration from '@modules/accountAdmin/pages/AccountAdministration';
 
 const ALL   = [ROLES.SUPER_ADMIN, ROLES.ADMIN, ROLES.USER];
@@ -85,16 +88,19 @@ const AppRouter = () => (
       <Route path={ROUTES.LOGIN} element={<Login />} />
       <Route path="/" element={<Navigate to={ROUTES.WELCOME} replace />} />
 
-      {/* Protected shell */}
+      {/* Protected */}
       <Route element={<ProtectedRoute allowedRoles={ALL}><AppShell /></ProtectedRoute>}>
 
+        {/* Settings */}
+        <Route path={ROUTES.APP_SETTINGS} element={<AppSettings />} />
+
         {/* Home */}
+        <Route path={ROUTES.HOME}                  element={<Navigate to={ROUTES.WELCOME} replace />} />
         <Route path={ROUTES.WELCOME}               element={<Dashboard />} />
         <Route path={ROUTES.DASHBOARD}             element={<Dashboard />} />
         <Route path={ROUTES.MESSAGES}              element={<Messages />} />
         <Route path={ROUTES.TASKS}                 element={<Tasks />} />
         <Route path={ROUTES.COMPANY_ANNOUNCEMENTS} element={<CompanyAnnouncements />} />
-        <Route path={ROUTES.HOME}                  element={<Navigate to={ROUTES.WELCOME} replace />} />
 
         {/* Reports */}
         <Route path={ROUTES.REPORTS} element={<Reports />} />
@@ -127,9 +133,7 @@ const AppRouter = () => (
         <Route path={ROUTES.CLAIM_CONTROL}     element={<ClaimControl />} />
         <Route path={ROUTES.FOLLOW_UP}         element={<FollowUpManagement />} />
         <Route path={ROUTES.CLAIM_BATCH_PRINT} element={<ClaimBatchPrint />} />
-        <Route path={ROUTES.CLAIM_SETTINGS}    element={
-          <ProtectedRoute allowedRoles={ADMIN}><ClaimSettings /></ProtectedRoute>
-        } />
+        <Route path={ROUTES.CLAIM_SETTINGS}    element={<ProtectedRoute allowedRoles={ADMIN}><ClaimSettings /></ProtectedRoute>} />
 
         {/* Payment */}
         <Route path={ROUTES.PAYMENT}          element={<Navigate to={ROUTES.PAYMENT_POST} replace />} />
@@ -144,9 +148,7 @@ const AppRouter = () => (
         <Route path={ROUTES.DOCUMENTS} element={<Documents />} />
 
         {/* Interface */}
-        <Route path={ROUTES.INTERFACE} element={
-          <ProtectedRoute allowedRoles={ADMIN}><Interface /></ProtectedRoute>
-        } />
+        <Route path={ROUTES.INTERFACE} element={<ProtectedRoute allowedRoles={ADMIN}><Interface /></ProtectedRoute>} />
 
         {/* Customer Setup */}
         <Route path={ROUTES.CUSTOMER_SETUP}      element={<Navigate to={ROUTES.PRACTICES} replace />} />
@@ -166,12 +168,9 @@ const AppRouter = () => (
         <Route path={ROUTES.CUSTOMER_SETTINGS}   element={<ProtectedRoute allowedRoles={ADMIN}><CustomerSettings /></ProtectedRoute>} />
 
         {/* Account Admin */}
-        <Route path={ROUTES.ACCOUNT_ADMIN} element={
-          <ProtectedRoute allowedRoles={SA}><AccountAdministration /></ProtectedRoute>
-        } />
+        <Route path={ROUTES.ACCOUNT_ADMIN} element={<ProtectedRoute allowedRoles={SA}><AccountAdministration /></ProtectedRoute>} />
       </Route>
 
-      {/* Fallback */}
       <Route path="*" element={<Navigate to={ROUTES.WELCOME} replace />} />
     </Routes>
   </BrowserRouter>
