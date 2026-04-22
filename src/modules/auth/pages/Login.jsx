@@ -34,7 +34,7 @@ const Login = () => {
         username: "emilys",
         password: "emilyspass",
       };
-      const data = await loginApi(obj).unwrap();
+      const data = await loginApi({ ...obj }).unwrap();
       login(data);
       navigate(ROUTES.DASHBOARD, { replace: true });
     } catch (_) {}

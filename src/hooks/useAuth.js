@@ -6,10 +6,10 @@ export const useAuth = () => {
   const { user, accessToken, loading } = useSelector((state) => state.auth);
 
   return {
-    user: user ?? "khan",
+    user: user ?? "sami",
     loading,
     isAuthenticated: !!accessToken,
-    role: user?.role || "admin",
+    role: user?.role || "super_admin",
     login: (credentials) => dispatch(setCredentials(credentials)),
     logout: () => dispatch(logout()),
   };
